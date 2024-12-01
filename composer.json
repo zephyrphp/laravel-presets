@@ -1,0 +1,46 @@
+{
+    "name": "zephyrphp/laravel-presets",
+    "description": "Presets are an opinionated coding style for your Laravel application.",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Fabrice Planchette",
+            "email": "planchettefabrice@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zephyr\\Presets\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/contracts": "^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^9.0",
+        "rector/rector": "^1.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zephyr\\Presets\\PresetsServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "format": [
+            "rector",
+            "pint"
+        ],
+        "test": [
+            "rector --dry-run",
+            "pint --test"
+        ]
+    }
+}
